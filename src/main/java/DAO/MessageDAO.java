@@ -193,38 +193,7 @@ public class MessageDAO {
         return messages;
     }
 
-    // public boolean updateMessage(Message message) {
-    //     Connection connection = null;
-    //     PreparedStatement preparedStatement = null;
-
-    //     try {
-    //         connection = ConnectionUtil.getConnection();
-    //         String sql = "UPDATE Message SET message_text = ? WHERE message_id = ?";
-    //         preparedStatement = connection.prepareStatement(sql);
-    //         preparedStatement.setString(1, message.getMessage_text());
-    //         preparedStatement.setInt(2, message.getMessage_id());
-
-
-    //         int rowsAffected = preparedStatement.executeUpdate();
-
-    //         return rowsAffected > 0;
-    //     } catch (SQLException e) {
-    //         e.printStackTrace();
-    //         return false;
-    //     } finally {
-    //         try {
-    //             if (preparedStatement != null) {
-    //                 preparedStatement.close();
-    //             }
-    //             if (connection != null) {
-    //                 connection.close();
-    //             }
-    //         } catch (SQLException e) {
-    //             e.printStackTrace();
-    //         }
-    //     }
-    // }
-
+    
     public boolean updateMessageText(int messageId, String updatedMessageText) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -276,7 +245,7 @@ public class MessageDAO {
             else{
                 return null;
             }
-            // return rowsUpdated > 0;
+     
         } catch (SQLException e) {
             e.printStackTrace();
             return null; // Deleting message failed
@@ -285,9 +254,7 @@ public class MessageDAO {
                 if (preparedStatement != null) {
                     preparedStatement.close();
                 }
-                // if (connection != null) {
-                //     connection.close();
-                // }
+                
             } catch (SQLException e) {
                 e.printStackTrace();
             }
